@@ -26,6 +26,8 @@ size_t ft_strlen(const char *str);
 
 int strncmp(const char *str1, const char *str2, size_t n);
 
+char *ft_strnstr(const char *haystack, const char *needle, size_t n);
+
 char *ft_strrchr(const char *str, int c);
 
 int ft_tolower(int c);
