@@ -4,12 +4,11 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
     size_t i;
     size_t j;
+
     i = 0;
     j = 0;
     if (needle == NULL || needle[0] == '\0')
-    {
         return((char *)haystack);
-    }
     while (haystack != '\0' && i < n)
     {
         if (haystack[i] == needle[j])
