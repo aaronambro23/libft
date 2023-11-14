@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/14 13:18:40 by aaambros          #+#    #+#             */
+/*   Updated: 2023/11/14 13:18:41 by aaambros         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void *ft_memmove(void *s1, const void *s2, size_t n)
+void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
 	size_t	len;
 
