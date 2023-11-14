@@ -6,7 +6,7 @@
 /*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:18:14 by aaambros          #+#    #+#             */
-/*   Updated: 2023/11/14 18:41:39 by aaambros         ###   ########.fr       */
+/*   Updated: 2023/11/14 18:44:09 by aaambros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ char	*ft_itoa(int n)
 	size_t	length;
 
 	is_neg = (n < 0);
-	if (!(str == ft_calloc(11 + is_neg, sizeof(*str))))
+	str = ft_calloc(11 + is_neg, sizeof(*str));
+	if (!str)
 		return (NULL);
 	if (n == 0)
 		str[0] = '0';
