@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 13:19:03 by aaambros          #+#    #+#             */
-/*   Updated: 2023/11/23 18:45:43 by aaambros         ###   ########.fr       */
+/*   Created: 2023/11/23 18:49:40 by aaambros          #+#    #+#             */
+/*   Updated: 2023/11/23 19:05:42 by aaambros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(char *s, int c)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	int	i;
+	size_t	i;
+	char	*str;
 
+	if (!s)
+		return (NULL);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
+	str = ft_calloc(len + 1, sizeof(char));
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (s[i] != '\0')
+	while (i < len)
 	{
-		if (s[i] == (char)c)
-			return (&s[i]);
+		str[i] = s[start + i];
 		i++;
 	}
-	if (s[i] == (char)c)
-		return (&s[i]);
-	else
-		return (NULL);
+	return (str);
 }

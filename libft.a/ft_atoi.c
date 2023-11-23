@@ -6,7 +6,7 @@
 /*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:13:17 by aaambros          #+#    #+#             */
-/*   Updated: 2023/11/14 13:17:38 by aaambros         ###   ########.fr       */
+/*   Updated: 2023/11/19 20:41:00 by aaambros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,19 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	while (my_isspace(str[i]))
 		i++;
-	while (str[i] == '-' || str[i] == '+')
+	if (str[i] == '-')
 	{
-		if (str[i] == '-')
-		{
-			sign *= -1;
-		}
+		sign *= -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	else if (str[i] == '+')
+	{
+		i++;
+	}
+	while (ft_isdigit(str[i]))
 	{
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
-	return (result * sign);
+	return (sign * result);
 }
