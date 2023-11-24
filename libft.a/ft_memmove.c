@@ -6,7 +6,7 @@
 /*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:18:40 by aaambros          #+#    #+#             */
-/*   Updated: 2023/11/16 20:45:06 by aaambros         ###   ########.fr       */
+/*   Updated: 2023/11/24 00:35:47 by aaambros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
 	size_t	len;
 
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
 	len = 0;
 	if (s2 < s1)
 	{

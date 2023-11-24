@@ -1,5 +1,5 @@
 NAME = libft.a
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = -rcs
 CC = gcc
 RM = rm -rf
@@ -21,9 +21,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ_FILES)
 	ar $(ARFLAGS) $(NAME) $(OBJ_FILES)
-
-%.o: %.c 
-	$(CC) $(FLAGS) -c $< -o $@
 
 clean: 
 	$(RM) $(OBJ_FILES) $(BONUS_OBJ_FILES)

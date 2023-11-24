@@ -6,13 +6,13 @@
 /*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:18:14 by aaambros          #+#    #+#             */
-/*   Updated: 2023/11/16 20:45:05 by aaambros         ###   ########.fr       */
+/*   Updated: 2023/11/24 01:18:33 by aaambros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_abs(int nbr)
+static int	ft_neg(int nbr)
 {
 	if (nbr < 0)
 		return (-nbr);
@@ -37,6 +37,23 @@ static void	ft_strrev(char *str)
 	}
 }
 
+static size_t	ft_numlen(int n)
+{
+	size_t	len;
+
+	len = 0;
+	if (n <= 0)
+	{
+		len = 1;
+	}
+	while (n != 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -44,7 +61,8 @@ char	*ft_itoa(int n)
 	size_t	length;
 
 	is_neg = (n < 0);
-	str = ft_calloc(11 + is_neg, sizeof(*str));
+	length = ft_numlen(n);
+	str = ft_calloc(length + 1, sizeof(*str));
 	if (!str)
 		return (NULL);
 	if (n == 0)
@@ -52,7 +70,7 @@ char	*ft_itoa(int n)
 	length = 0;
 	while (n != 0)
 	{
-		str[length++] = '0' + ft_abs(n % 10);
+		str[length++] = '0' + ft_neg(n % 10);
 		n /= 10;
 	}
 	if (is_neg)

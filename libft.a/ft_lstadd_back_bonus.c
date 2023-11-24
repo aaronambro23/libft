@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:50:36 by aaambros          #+#    #+#             */
-/*   Updated: 2023/11/21 14:19:21 by aaambros         ###   ########.fr       */
+/*   Updated: 2023/11/23 23:58:25 by aaambros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,4 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		temp = temp->next;
 	}
 	temp->next = new;
-	new->next = NULL;
 }

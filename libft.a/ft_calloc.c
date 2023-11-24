@@ -6,7 +6,7 @@
 /*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:17:49 by aaambros          #+#    #+#             */
-/*   Updated: 2023/11/14 13:17:50 by aaambros         ###   ########.fr       */
+/*   Updated: 2023/11/24 01:24:51 by aaambros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	if (count == 0 || size == 0)
 	{
-		count = 1;
-		size = 1;
+		return (malloc(0));
 	}
 	b = count * size;
 	p = malloc(b);
