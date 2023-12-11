@@ -6,14 +6,13 @@
 /*   By: aaambros <aaambros@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:20:03 by aaambros          #+#    #+#             */
-/*   Updated: 2023/11/24 00:06:02 by aaambros         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:04:08 by aaambros         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -80,7 +79,7 @@ char				*ft_strnstr(const char *haystack, const char *needle,
 
 char				*ft_strrchr(char *s, int c);
 
-char				*ft_strtrim(const char *s1, const char *set);
+char				*ft_strtrim(char const *s1, char const *set);
 
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 
